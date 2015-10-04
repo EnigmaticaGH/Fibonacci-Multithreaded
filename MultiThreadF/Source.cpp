@@ -20,7 +20,7 @@ using namespace std;
 
 //input: size, vector
 //output: vector of Fibonacci values
-vector<int> fib(int numberOfIterations, vector<int> sequence)
+vector<int> fib(int numberOfIterations, vector<int> &sequence)
 {
 	//initalize vector of integers to store sequence in
 	sequence.resize(numberOfIterations);
