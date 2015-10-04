@@ -1,13 +1,4 @@
 //Programmer: Derek Shunia/
-/*************************/
-//Operating Systems HW 1--/
-/*************************/
-//Due: Oct 04, 2015------//
-
-/*I have neither given nor recieved unauthorized
-//aid in completing this work, nor have I presented
-//someone else's work as my own.*/
-
 //headers
 #include <thread>
 #include <future>
