@@ -6,8 +6,11 @@
 #include <string>
 #include <vector>
 #include <ctype.h>
+#include <time.h>
 
 using namespace std;
+
+time_t start;
 
 //input: size, vector
 //output: vector of Fibonacci values
@@ -55,6 +58,8 @@ int getUserInput()
 		if (!isNumber(cinput)) cout << "Input is not a number. Please try again: ";
 	} while (!isNumber(cinput));
 
+	start = time(0);
+
 	return atoi(cinput.c_str());
 }
 
@@ -72,7 +77,6 @@ void printVector(vector<int> v)
 int main()
 {
 	vector<int> sequence;
-	
 	int numberOfIterations = 0;
 
 	//get input from user and make sure it is clean
@@ -82,6 +86,9 @@ int main()
 	auto thread = async(fib, numberOfIterations, sequence);
 	//return from child thread with return values
 	sequence = thread.get();
+
+	double seconds_since_start = difftime(time(0), start);
+	cout << "Generating sequence took " << seconds_since_start << " seconds.\n";
 
 	//print the sequence onto the console window
 	printVector(sequence);
